@@ -26,8 +26,8 @@ header {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    max-width: 240px;
+    height: 240px;
 }
 
 .remove-btn {
@@ -49,5 +49,12 @@ footer {
     padding: 10px;
     position: fixed;
     bottom: 0;
-     width:100%;
+    width: 100%;
+}
+
+.checkout-btn {
+    background-color: green;
+    color: white;
+    height: 40px;
+    width: 80px;
 }
