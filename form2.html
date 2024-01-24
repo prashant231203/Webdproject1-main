@@ -15,7 +15,7 @@
 
             <h1 id="title">Sign Up</h1>
 
-            <form>
+            <form action="process_login.php" method="post" onsubmit="return checkempty()">
 
                 <div class="input-group">
 
@@ -32,7 +32,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="password">
+                        <input type="password" id="password" name="password" placeholder="password">
 
 
                     </div>
@@ -43,27 +43,37 @@
                     <button type="submit" class="disable" id="signinbtn">Sign In</button>
                     <input class="">
                 </div>
+                <div id="hello"></div>
             </form>
         </div>
         <script>
-            let signupbtn = document.getElementById("signupbtn");
-            let signinbtn = document.getElementById("signinbtn");
-            let namefield = document.getElementById("namefield");
-            let title = document.getElementById("title");
-
-            signinbtn.onclick = function () {
-                namefield.style.maxHeight = "0";
-                title.innerHTML = "Sign In";
-                signupbtn.classList.add("disable");
-                signinbtn.classList.remove("disable");
-
-            }
-            signupbtn.onclick = function () {
-                namefield.style.maxHeight = "60px";
-                title.innerHTML = "Sign up";
-                signupbtn.classList.remove("disable");
-                signinbtn.classList.add("disable");
-
+            function checkempty() {
+                n = /[0-9]/;
+                a = /[a-z]/;
+                AA = /[A-Z]/;
+                c = /[!@#$%^&*]/;
+                aa = document.getElementById('password').value;
+                if (aa == "") {
+                    document.getElementById('hello').innerHTML = "PASSWORD IS MANDATORY"
+                    return false;
+                } else if (aa.length < 8) {
+                    document.getElementById('hello').innerHTML = "PASSWORD LENGTH IS MUST BE 8 OR ABOVE"
+                    return false;
+                } else if (!n.test(aa)) {
+                    document.getElementById('hello').innerHTML = "PASSWORD MUST CONTAIN NUMBER"
+                    return false;
+                } else if (!a.test(aa)) {
+                    document.getElementById('hello').innerHTML = "PASSWORD MUST SMALL CONTAIN ALPHABET"
+                    return false;
+                } else if (!AA.test(aa)) {
+                    document.getElementById('hello').innerHTML = "PASSWORD MUST CAPITAL CONTAIN ALPHABET"
+                    return false;
+                } else if (!c.test(aa)) {
+                    document.getElementById('hello').innerHTML = "PASSWORD MUST CONTAIN SPECIAL CHARACTER"
+                    return false;
+                }
+                window.location.href = 'index.html';
+                return false;
             }
 
         </script>

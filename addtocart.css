@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #0056d2;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -43,7 +43,7 @@ header {
 }
 
 footer {
-    background-color: #333;
+    background-color: #0056d2;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -53,8 +53,8 @@ footer {
 }
 
 .checkout-btn {
-    background-color: green;
-    color: white;
+    background-color: yellow;
+    color: black;
     height: 40px;
     width: 80px;
 }
